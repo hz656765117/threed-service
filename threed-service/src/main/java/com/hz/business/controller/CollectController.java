@@ -13,7 +13,7 @@ public class CollectController {
  
     
     
-    //浏览器请求    http://localhost:8080/collect/add?userId=huangzhuo
+    //浏览器请求    http://localhost:8088/collect/add?userId=huangzhuo
 	/**
 	 * method= RequestMethod.GET 指定请求方式为get
 	 * @param userId
