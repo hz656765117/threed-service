@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hz.base.util.JsonResult;
+import com.hz.base.util.MD5Util;
 import com.hz.business.service.IUserService;
 
 
@@ -38,7 +39,7 @@ public class LoginController {
 	 */
 	@RequestMapping("login")
     public JsonResult  setupForm(ModelMap model, HttpServletRequest request,String username,String password) {
-		JsonResult result = userService.validUser(username, password);
+		JsonResult result = userService.validUser(username, MD5Util.md5Hex(password.getBytes()));
         return result;
     }
 }
