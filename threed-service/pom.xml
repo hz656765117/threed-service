@@ -12,6 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jdk.version>1.7</jdk.version>
   </properties>
 
     <!-- Inherit defaults from Spring Boot -->
@@ -21,12 +22,22 @@
         <version>1.5.6.RELEASE</version>
     </parent>
 
+
+
     <!-- Add typical dependencies for a web application -->
     <dependencies>
+    
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+<!-- 			<exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-tomcat</artifactId>
+                </exclusion>
+            </exclusions> -->
         </dependency>
+        
  		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-messaging</artifactId>
@@ -35,6 +46,13 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-websocket</artifactId>
 		</dependency>  
+		
+		<!-- 内嵌 Jetty -->
+<!-- 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jetty</artifactId>
+			<scope>provided</scope>
+		</dependency> -->
         
 	<!-- mysql开始 -->
 	<dependency>
@@ -43,6 +61,9 @@
 		<version>5.1.21</version>
 	</dependency>
 	<!-- mysql结束 -->
+	
+ 
+	
 	
 	<!-- mybatis开始 -->
 	<dependency>
@@ -120,17 +141,58 @@
 	</dependency>
 	<!-- commons依赖结束 -->
 	
+	<dependency>
+	    <groupId>com.aliyun.oss</groupId>
+	    <artifactId>aliyun-sdk-oss</artifactId>
+	    <version>2.7.0</version>
+	</dependency>
         
     </dependencies>
 
     <!-- Package as an executable jar -->
-    <build>
+<!--     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build> -->
+    
+<!-- 	<build>
+		<plugins>
+			compiler插件, 设定JDK版本
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.2</version>
+				<configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+					<showWarnings>true</showWarnings>
+				</configuration>
+			</plugin>
+			resource插件
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+		</plugins>
+	</build> -->
+	
+	<build>
+		<finalName>${project.artifactId}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <jvmArguments>-Xms256M -Xmx1024M -XX:+UseConcMarkSweepGC</jvmArguments>
+                    <executable>true</executable>
+                </configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>
