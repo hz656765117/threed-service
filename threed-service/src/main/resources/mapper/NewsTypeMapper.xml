@@ -1,0 +1,1593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hz.business.dao.NewsTypeMapper">
+  <resultMap id="BaseResultMap" type="com.hz.business.pojo.NewsType">
+    <id column="classid" jdbcType="SMALLINT" property="classid" />
+    <result column="bclassid" jdbcType="SMALLINT" property="bclassid" />
+    <result column="classname" jdbcType="VARCHAR" property="classname" />
+    <result column="is_zt" jdbcType="BIT" property="isZt" />
+    <result column="lencord" jdbcType="SMALLINT" property="lencord" />
+    <result column="link_num" jdbcType="TINYINT" property="linkNum" />
+    <result column="newstempid" jdbcType="SMALLINT" property="newstempid" />
+    <result column="onclick" jdbcType="INTEGER" property="onclick" />
+    <result column="listtempid" jdbcType="SMALLINT" property="listtempid" />
+    <result column="islast" jdbcType="BIT" property="islast" />
+    <result column="classtype" jdbcType="VARCHAR" property="classtype" />
+    <result column="newspath" jdbcType="VARCHAR" property="newspath" />
+    <result column="filename" jdbcType="BIT" property="filename" />
+    <result column="filetype" jdbcType="VARCHAR" property="filetype" />
+    <result column="openpl" jdbcType="BIT" property="openpl" />
+    <result column="openadd" jdbcType="BIT" property="openadd" />
+    <result column="newline" jdbcType="INTEGER" property="newline" />
+    <result column="hotline" jdbcType="INTEGER" property="hotline" />
+    <result column="goodline" jdbcType="INTEGER" property="goodline" />
+    <result column="classurl" jdbcType="VARCHAR" property="classurl" />
+    <result column="groupid" jdbcType="SMALLINT" property="groupid" />
+    <result column="myorder" jdbcType="SMALLINT" property="myorder" />
+    <result column="filename_qz" jdbcType="VARCHAR" property="filenameQz" />
+    <result column="hotplline" jdbcType="TINYINT" property="hotplline" />
+    <result column="modid" jdbcType="SMALLINT" property="modid" />
+    <result column="checked" jdbcType="BIT" property="checked" />
+    <result column="firstline" jdbcType="TINYINT" property="firstline" />
+    <result column="bname" jdbcType="VARCHAR" property="bname" />
+    <result column="islist" jdbcType="BIT" property="islist" />
+    <result column="searchtempid" jdbcType="SMALLINT" property="searchtempid" />
+    <result column="tid" jdbcType="SMALLINT" property="tid" />
+    <result column="tbname" jdbcType="VARCHAR" property="tbname" />
+    <result column="maxnum" jdbcType="INTEGER" property="maxnum" />
+    <result column="checkpl" jdbcType="BIT" property="checkpl" />
+    <result column="down_num" jdbcType="TINYINT" property="downNum" />
+    <result column="online_num" jdbcType="TINYINT" property="onlineNum" />
+    <result column="listorder" jdbcType="VARCHAR" property="listorder" />
+    <result column="reorder" jdbcType="VARCHAR" property="reorder" />
+    <result column="classimg" jdbcType="VARCHAR" property="classimg" />
+    <result column="jstempid" jdbcType="SMALLINT" property="jstempid" />
+    <result column="addinfofen" jdbcType="INTEGER" property="addinfofen" />
+    <result column="listdt" jdbcType="BIT" property="listdt" />
+    <result column="showclass" jdbcType="BIT" property="showclass" />
+    <result column="showdt" jdbcType="BIT" property="showdt" />
+    <result column="checkqadd" jdbcType="BIT" property="checkqadd" />
+    <result column="qaddlist" jdbcType="BIT" property="qaddlist" />
+    <result column="qaddshowkey" jdbcType="BIT" property="qaddshowkey" />
+    <result column="adminqinfo" jdbcType="BIT" property="adminqinfo" />
+    <result column="doctime" jdbcType="SMALLINT" property="doctime" />
+    <result column="classpagekey" jdbcType="VARCHAR" property="classpagekey" />
+    <result column="dtlisttempid" jdbcType="SMALLINT" property="dtlisttempid" />
+    <result column="classtempid" jdbcType="SMALLINT" property="classtempid" />
+    <result column="nreclass" jdbcType="BIT" property="nreclass" />
+    <result column="nreinfo" jdbcType="BIT" property="nreinfo" />
+    <result column="nrejs" jdbcType="BIT" property="nrejs" />
+    <result column="nottobq" jdbcType="BIT" property="nottobq" />
+    <result column="ipath" jdbcType="VARCHAR" property="ipath" />
+    <result column="addreinfo" jdbcType="BIT" property="addreinfo" />
+    <result column="haddlist" jdbcType="TINYINT" property="haddlist" />
+    <result column="sametitle" jdbcType="BIT" property="sametitle" />
+    <result column="definfovoteid" jdbcType="SMALLINT" property="definfovoteid" />
+    <result column="wburl" jdbcType="VARCHAR" property="wburl" />
+    <result column="qeditchecked" jdbcType="BIT" property="qeditchecked" />
+    <result column="wapstyleid" jdbcType="SMALLINT" property="wapstyleid" />
+    <result column="repreinfo" jdbcType="BIT" property="repreinfo" />
+    <result column="pltempid" jdbcType="SMALLINT" property="pltempid" />
+    <result column="yhid" jdbcType="SMALLINT" property="yhid" />
+    <result column="wfid" jdbcType="SMALLINT" property="wfid" />
+    <result column="cgtoinfo" jdbcType="BIT" property="cgtoinfo" />
+    <result column="bdinfoid" jdbcType="VARCHAR" property="bdinfoid" />
+    <result column="repagenum" jdbcType="SMALLINT" property="repagenum" />
+    <result column="keycid" jdbcType="SMALLINT" property="keycid" />
+    <result column="allinfos" jdbcType="INTEGER" property="allinfos" />
+    <result column="infos" jdbcType="INTEGER" property="infos" />
+    <result column="addtime" jdbcType="INTEGER" property="addtime" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.hz.business.pojo.NewsTypeWithBLOBs">
+    <result column="sonclass" jdbcType="LONGVARCHAR" property="sonclass" />
+    <result column="featherclass" jdbcType="LONGVARCHAR" property="featherclass" />
+    <result column="classpath" jdbcType="LONGVARCHAR" property="classpath" />
+    <result column="intro" jdbcType="LONGVARCHAR" property="intro" />
+    <result column="qaddgroupid" jdbcType="LONGVARCHAR" property="qaddgroupid" />
+    <result column="cgroupid" jdbcType="LONGVARCHAR" property="cgroupid" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    classid, bclassid, classname, is_zt, lencord, link_num, newstempid, onclick, listtempid, 
+    islast, classtype, newspath, filename, filetype, openpl, openadd, newline, hotline, 
+    goodline, classurl, groupid, myorder, filename_qz, hotplline, modid, checked, firstline, 
+    bname, islist, searchtempid, tid, tbname, maxnum, checkpl, down_num, online_num, 
+    listorder, reorder, classimg, jstempid, addinfofen, listdt, showclass, showdt, checkqadd, 
+    qaddlist, qaddshowkey, adminqinfo, doctime, classpagekey, dtlisttempid, classtempid, 
+    nreclass, nreinfo, nrejs, nottobq, ipath, addreinfo, haddlist, sametitle, definfovoteid, 
+    wburl, qeditchecked, wapstyleid, repreinfo, pltempid, yhid, wfid, cgtoinfo, bdinfoid, 
+    repagenum, keycid, allinfos, infos, addtime
+  </sql>
+  <sql id="Blob_Column_List">
+    sonclass, featherclass, classpath, intro, qaddgroupid, cgroupid
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.hz.business.pojo.NewsTypeExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from phome_enewsclass
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.hz.business.pojo.NewsTypeExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from phome_enewsclass
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Short" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from phome_enewsclass
+    where classid = #{classid,jdbcType=SMALLINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Short">
+    delete from phome_enewsclass
+    where classid = #{classid,jdbcType=SMALLINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hz.business.pojo.NewsTypeExample">
+    delete from phome_enewsclass
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hz.business.pojo.NewsTypeWithBLOBs">
+    insert into phome_enewsclass (classid, bclassid, classname, 
+      is_zt, lencord, link_num, 
+      newstempid, onclick, listtempid, 
+      islast, classtype, newspath, 
+      filename, filetype, openpl, 
+      openadd, newline, hotline, 
+      goodline, classurl, groupid, 
+      myorder, filename_qz, hotplline, 
+      modid, checked, firstline, 
+      bname, islist, searchtempid, 
+      tid, tbname, maxnum, 
+      checkpl, down_num, online_num, 
+      listorder, reorder, classimg, 
+      jstempid, addinfofen, listdt, 
+      showclass, showdt, checkqadd, qaddlist, 
+      qaddshowkey, adminqinfo, doctime, 
+      classpagekey, dtlisttempid, classtempid, 
+      nreclass, nreinfo, nrejs, nottobq, 
+      ipath, addreinfo, haddlist, 
+      sametitle, definfovoteid, wburl, 
+      qeditchecked, wapstyleid, repreinfo, 
+      pltempid, yhid, wfid, 
+      cgtoinfo, bdinfoid, repagenum, 
+      keycid, allinfos, infos, 
+      addtime, sonclass, featherclass, 
+      classpath, intro, qaddgroupid, 
+      cgroupid)
+    values (#{classid,jdbcType=SMALLINT}, #{bclassid,jdbcType=SMALLINT}, #{classname,jdbcType=VARCHAR}, 
+      #{isZt,jdbcType=BIT}, #{lencord,jdbcType=SMALLINT}, #{linkNum,jdbcType=TINYINT}, 
+      #{newstempid,jdbcType=SMALLINT}, #{onclick,jdbcType=INTEGER}, #{listtempid,jdbcType=SMALLINT}, 
+      #{islast,jdbcType=BIT}, #{classtype,jdbcType=VARCHAR}, #{newspath,jdbcType=VARCHAR}, 
+      #{filename,jdbcType=BIT}, #{filetype,jdbcType=VARCHAR}, #{openpl,jdbcType=BIT}, 
+      #{openadd,jdbcType=BIT}, #{newline,jdbcType=INTEGER}, #{hotline,jdbcType=INTEGER}, 
+      #{goodline,jdbcType=INTEGER}, #{classurl,jdbcType=VARCHAR}, #{groupid,jdbcType=SMALLINT}, 
+      #{myorder,jdbcType=SMALLINT}, #{filenameQz,jdbcType=VARCHAR}, #{hotplline,jdbcType=TINYINT}, 
+      #{modid,jdbcType=SMALLINT}, #{checked,jdbcType=BIT}, #{firstline,jdbcType=TINYINT}, 
+      #{bname,jdbcType=VARCHAR}, #{islist,jdbcType=BIT}, #{searchtempid,jdbcType=SMALLINT}, 
+      #{tid,jdbcType=SMALLINT}, #{tbname,jdbcType=VARCHAR}, #{maxnum,jdbcType=INTEGER}, 
+      #{checkpl,jdbcType=BIT}, #{downNum,jdbcType=TINYINT}, #{onlineNum,jdbcType=TINYINT}, 
+      #{listorder,jdbcType=VARCHAR}, #{reorder,jdbcType=VARCHAR}, #{classimg,jdbcType=VARCHAR}, 
+      #{jstempid,jdbcType=SMALLINT}, #{addinfofen,jdbcType=INTEGER}, #{listdt,jdbcType=BIT}, 
+      #{showclass,jdbcType=BIT}, #{showdt,jdbcType=BIT}, #{checkqadd,jdbcType=BIT}, #{qaddlist,jdbcType=BIT}, 
+      #{qaddshowkey,jdbcType=BIT}, #{adminqinfo,jdbcType=BIT}, #{doctime,jdbcType=SMALLINT}, 
+      #{classpagekey,jdbcType=VARCHAR}, #{dtlisttempid,jdbcType=SMALLINT}, #{classtempid,jdbcType=SMALLINT}, 
+      #{nreclass,jdbcType=BIT}, #{nreinfo,jdbcType=BIT}, #{nrejs,jdbcType=BIT}, #{nottobq,jdbcType=BIT}, 
+      #{ipath,jdbcType=VARCHAR}, #{addreinfo,jdbcType=BIT}, #{haddlist,jdbcType=TINYINT}, 
+      #{sametitle,jdbcType=BIT}, #{definfovoteid,jdbcType=SMALLINT}, #{wburl,jdbcType=VARCHAR}, 
+      #{qeditchecked,jdbcType=BIT}, #{wapstyleid,jdbcType=SMALLINT}, #{repreinfo,jdbcType=BIT}, 
+      #{pltempid,jdbcType=SMALLINT}, #{yhid,jdbcType=SMALLINT}, #{wfid,jdbcType=SMALLINT}, 
+      #{cgtoinfo,jdbcType=BIT}, #{bdinfoid,jdbcType=VARCHAR}, #{repagenum,jdbcType=SMALLINT}, 
+      #{keycid,jdbcType=SMALLINT}, #{allinfos,jdbcType=INTEGER}, #{infos,jdbcType=INTEGER}, 
+      #{addtime,jdbcType=INTEGER}, #{sonclass,jdbcType=LONGVARCHAR}, #{featherclass,jdbcType=LONGVARCHAR}, 
+      #{classpath,jdbcType=LONGVARCHAR}, #{intro,jdbcType=LONGVARCHAR}, #{qaddgroupid,jdbcType=LONGVARCHAR}, 
+      #{cgroupid,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hz.business.pojo.NewsTypeWithBLOBs">
+    insert into phome_enewsclass
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="classid != null">
+        classid,
+      </if>
+      <if test="bclassid != null">
+        bclassid,
+      </if>
+      <if test="classname != null">
+        classname,
+      </if>
+      <if test="isZt != null">
+        is_zt,
+      </if>
+      <if test="lencord != null">
+        lencord,
+      </if>
+      <if test="linkNum != null">
+        link_num,
+      </if>
+      <if test="newstempid != null">
+        newstempid,
+      </if>
+      <if test="onclick != null">
+        onclick,
+      </if>
+      <if test="listtempid != null">
+        listtempid,
+      </if>
+      <if test="islast != null">
+        islast,
+      </if>
+      <if test="classtype != null">
+        classtype,
+      </if>
+      <if test="newspath != null">
+        newspath,
+      </if>
+      <if test="filename != null">
+        filename,
+      </if>
+      <if test="filetype != null">
+        filetype,
+      </if>
+      <if test="openpl != null">
+        openpl,
+      </if>
+      <if test="openadd != null">
+        openadd,
+      </if>
+      <if test="newline != null">
+        newline,
+      </if>
+      <if test="hotline != null">
+        hotline,
+      </if>
+      <if test="goodline != null">
+        goodline,
+      </if>
+      <if test="classurl != null">
+        classurl,
+      </if>
+      <if test="groupid != null">
+        groupid,
+      </if>
+      <if test="myorder != null">
+        myorder,
+      </if>
+      <if test="filenameQz != null">
+        filename_qz,
+      </if>
+      <if test="hotplline != null">
+        hotplline,
+      </if>
+      <if test="modid != null">
+        modid,
+      </if>
+      <if test="checked != null">
+        checked,
+      </if>
+      <if test="firstline != null">
+        firstline,
+      </if>
+      <if test="bname != null">
+        bname,
+      </if>
+      <if test="islist != null">
+        islist,
+      </if>
+      <if test="searchtempid != null">
+        searchtempid,
+      </if>
+      <if test="tid != null">
+        tid,
+      </if>
+      <if test="tbname != null">
+        tbname,
+      </if>
+      <if test="maxnum != null">
+        maxnum,
+      </if>
+      <if test="checkpl != null">
+        checkpl,
+      </if>
+      <if test="downNum != null">
+        down_num,
+      </if>
+      <if test="onlineNum != null">
+        online_num,
+      </if>
+      <if test="listorder != null">
+        listorder,
+      </if>
+      <if test="reorder != null">
+        reorder,
+      </if>
+      <if test="classimg != null">
+        classimg,
+      </if>
+      <if test="jstempid != null">
+        jstempid,
+      </if>
+      <if test="addinfofen != null">
+        addinfofen,
+      </if>
+      <if test="listdt != null">
+        listdt,
+      </if>
+      <if test="showclass != null">
+        showclass,
+      </if>
+      <if test="showdt != null">
+        showdt,
+      </if>
+      <if test="checkqadd != null">
+        checkqadd,
+      </if>
+      <if test="qaddlist != null">
+        qaddlist,
+      </if>
+      <if test="qaddshowkey != null">
+        qaddshowkey,
+      </if>
+      <if test="adminqinfo != null">
+        adminqinfo,
+      </if>
+      <if test="doctime != null">
+        doctime,
+      </if>
+      <if test="classpagekey != null">
+        classpagekey,
+      </if>
+      <if test="dtlisttempid != null">
+        dtlisttempid,
+      </if>
+      <if test="classtempid != null">
+        classtempid,
+      </if>
+      <if test="nreclass != null">
+        nreclass,
+      </if>
+      <if test="nreinfo != null">
+        nreinfo,
+      </if>
+      <if test="nrejs != null">
+        nrejs,
+      </if>
+      <if test="nottobq != null">
+        nottobq,
+      </if>
+      <if test="ipath != null">
+        ipath,
+      </if>
+      <if test="addreinfo != null">
+        addreinfo,
+      </if>
+      <if test="haddlist != null">
+        haddlist,
+      </if>
+      <if test="sametitle != null">
+        sametitle,
+      </if>
+      <if test="definfovoteid != null">
+        definfovoteid,
+      </if>
+      <if test="wburl != null">
+        wburl,
+      </if>
+      <if test="qeditchecked != null">
+        qeditchecked,
+      </if>
+      <if test="wapstyleid != null">
+        wapstyleid,
+      </if>
+      <if test="repreinfo != null">
+        repreinfo,
+      </if>
+      <if test="pltempid != null">
+        pltempid,
+      </if>
+      <if test="yhid != null">
+        yhid,
+      </if>
+      <if test="wfid != null">
+        wfid,
+      </if>
+      <if test="cgtoinfo != null">
+        cgtoinfo,
+      </if>
+      <if test="bdinfoid != null">
+        bdinfoid,
+      </if>
+      <if test="repagenum != null">
+        repagenum,
+      </if>
+      <if test="keycid != null">
+        keycid,
+      </if>
+      <if test="allinfos != null">
+        allinfos,
+      </if>
+      <if test="infos != null">
+        infos,
+      </if>
+      <if test="addtime != null">
+        addtime,
+      </if>
+      <if test="sonclass != null">
+        sonclass,
+      </if>
+      <if test="featherclass != null">
+        featherclass,
+      </if>
+      <if test="classpath != null">
+        classpath,
+      </if>
+      <if test="intro != null">
+        intro,
+      </if>
+      <if test="qaddgroupid != null">
+        qaddgroupid,
+      </if>
+      <if test="cgroupid != null">
+        cgroupid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="classid != null">
+        #{classid,jdbcType=SMALLINT},
+      </if>
+      <if test="bclassid != null">
+        #{bclassid,jdbcType=SMALLINT},
+      </if>
+      <if test="classname != null">
+        #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="isZt != null">
+        #{isZt,jdbcType=BIT},
+      </if>
+      <if test="lencord != null">
+        #{lencord,jdbcType=SMALLINT},
+      </if>
+      <if test="linkNum != null">
+        #{linkNum,jdbcType=TINYINT},
+      </if>
+      <if test="newstempid != null">
+        #{newstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="onclick != null">
+        #{onclick,jdbcType=INTEGER},
+      </if>
+      <if test="listtempid != null">
+        #{listtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="islast != null">
+        #{islast,jdbcType=BIT},
+      </if>
+      <if test="classtype != null">
+        #{classtype,jdbcType=VARCHAR},
+      </if>
+      <if test="newspath != null">
+        #{newspath,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        #{filename,jdbcType=BIT},
+      </if>
+      <if test="filetype != null">
+        #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="openpl != null">
+        #{openpl,jdbcType=BIT},
+      </if>
+      <if test="openadd != null">
+        #{openadd,jdbcType=BIT},
+      </if>
+      <if test="newline != null">
+        #{newline,jdbcType=INTEGER},
+      </if>
+      <if test="hotline != null">
+        #{hotline,jdbcType=INTEGER},
+      </if>
+      <if test="goodline != null">
+        #{goodline,jdbcType=INTEGER},
+      </if>
+      <if test="classurl != null">
+        #{classurl,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null">
+        #{groupid,jdbcType=SMALLINT},
+      </if>
+      <if test="myorder != null">
+        #{myorder,jdbcType=SMALLINT},
+      </if>
+      <if test="filenameQz != null">
+        #{filenameQz,jdbcType=VARCHAR},
+      </if>
+      <if test="hotplline != null">
+        #{hotplline,jdbcType=TINYINT},
+      </if>
+      <if test="modid != null">
+        #{modid,jdbcType=SMALLINT},
+      </if>
+      <if test="checked != null">
+        #{checked,jdbcType=BIT},
+      </if>
+      <if test="firstline != null">
+        #{firstline,jdbcType=TINYINT},
+      </if>
+      <if test="bname != null">
+        #{bname,jdbcType=VARCHAR},
+      </if>
+      <if test="islist != null">
+        #{islist,jdbcType=BIT},
+      </if>
+      <if test="searchtempid != null">
+        #{searchtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="tid != null">
+        #{tid,jdbcType=SMALLINT},
+      </if>
+      <if test="tbname != null">
+        #{tbname,jdbcType=VARCHAR},
+      </if>
+      <if test="maxnum != null">
+        #{maxnum,jdbcType=INTEGER},
+      </if>
+      <if test="checkpl != null">
+        #{checkpl,jdbcType=BIT},
+      </if>
+      <if test="downNum != null">
+        #{downNum,jdbcType=TINYINT},
+      </if>
+      <if test="onlineNum != null">
+        #{onlineNum,jdbcType=TINYINT},
+      </if>
+      <if test="listorder != null">
+        #{listorder,jdbcType=VARCHAR},
+      </if>
+      <if test="reorder != null">
+        #{reorder,jdbcType=VARCHAR},
+      </if>
+      <if test="classimg != null">
+        #{classimg,jdbcType=VARCHAR},
+      </if>
+      <if test="jstempid != null">
+        #{jstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="addinfofen != null">
+        #{addinfofen,jdbcType=INTEGER},
+      </if>
+      <if test="listdt != null">
+        #{listdt,jdbcType=BIT},
+      </if>
+      <if test="showclass != null">
+        #{showclass,jdbcType=BIT},
+      </if>
+      <if test="showdt != null">
+        #{showdt,jdbcType=BIT},
+      </if>
+      <if test="checkqadd != null">
+        #{checkqadd,jdbcType=BIT},
+      </if>
+      <if test="qaddlist != null">
+        #{qaddlist,jdbcType=BIT},
+      </if>
+      <if test="qaddshowkey != null">
+        #{qaddshowkey,jdbcType=BIT},
+      </if>
+      <if test="adminqinfo != null">
+        #{adminqinfo,jdbcType=BIT},
+      </if>
+      <if test="doctime != null">
+        #{doctime,jdbcType=SMALLINT},
+      </if>
+      <if test="classpagekey != null">
+        #{classpagekey,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlisttempid != null">
+        #{dtlisttempid,jdbcType=SMALLINT},
+      </if>
+      <if test="classtempid != null">
+        #{classtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="nreclass != null">
+        #{nreclass,jdbcType=BIT},
+      </if>
+      <if test="nreinfo != null">
+        #{nreinfo,jdbcType=BIT},
+      </if>
+      <if test="nrejs != null">
+        #{nrejs,jdbcType=BIT},
+      </if>
+      <if test="nottobq != null">
+        #{nottobq,jdbcType=BIT},
+      </if>
+      <if test="ipath != null">
+        #{ipath,jdbcType=VARCHAR},
+      </if>
+      <if test="addreinfo != null">
+        #{addreinfo,jdbcType=BIT},
+      </if>
+      <if test="haddlist != null">
+        #{haddlist,jdbcType=TINYINT},
+      </if>
+      <if test="sametitle != null">
+        #{sametitle,jdbcType=BIT},
+      </if>
+      <if test="definfovoteid != null">
+        #{definfovoteid,jdbcType=SMALLINT},
+      </if>
+      <if test="wburl != null">
+        #{wburl,jdbcType=VARCHAR},
+      </if>
+      <if test="qeditchecked != null">
+        #{qeditchecked,jdbcType=BIT},
+      </if>
+      <if test="wapstyleid != null">
+        #{wapstyleid,jdbcType=SMALLINT},
+      </if>
+      <if test="repreinfo != null">
+        #{repreinfo,jdbcType=BIT},
+      </if>
+      <if test="pltempid != null">
+        #{pltempid,jdbcType=SMALLINT},
+      </if>
+      <if test="yhid != null">
+        #{yhid,jdbcType=SMALLINT},
+      </if>
+      <if test="wfid != null">
+        #{wfid,jdbcType=SMALLINT},
+      </if>
+      <if test="cgtoinfo != null">
+        #{cgtoinfo,jdbcType=BIT},
+      </if>
+      <if test="bdinfoid != null">
+        #{bdinfoid,jdbcType=VARCHAR},
+      </if>
+      <if test="repagenum != null">
+        #{repagenum,jdbcType=SMALLINT},
+      </if>
+      <if test="keycid != null">
+        #{keycid,jdbcType=SMALLINT},
+      </if>
+      <if test="allinfos != null">
+        #{allinfos,jdbcType=INTEGER},
+      </if>
+      <if test="infos != null">
+        #{infos,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="sonclass != null">
+        #{sonclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="featherclass != null">
+        #{featherclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="classpath != null">
+        #{classpath,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="intro != null">
+        #{intro,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="qaddgroupid != null">
+        #{qaddgroupid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cgroupid != null">
+        #{cgroupid,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hz.business.pojo.NewsTypeExample" resultType="java.lang.Long">
+    select count(*) from phome_enewsclass
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update phome_enewsclass
+    <set>
+      <if test="record.classid != null">
+        classid = #{record.classid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.bclassid != null">
+        bclassid = #{record.bclassid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.classname != null">
+        classname = #{record.classname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isZt != null">
+        is_zt = #{record.isZt,jdbcType=BIT},
+      </if>
+      <if test="record.lencord != null">
+        lencord = #{record.lencord,jdbcType=SMALLINT},
+      </if>
+      <if test="record.linkNum != null">
+        link_num = #{record.linkNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.newstempid != null">
+        newstempid = #{record.newstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.onclick != null">
+        onclick = #{record.onclick,jdbcType=INTEGER},
+      </if>
+      <if test="record.listtempid != null">
+        listtempid = #{record.listtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.islast != null">
+        islast = #{record.islast,jdbcType=BIT},
+      </if>
+      <if test="record.classtype != null">
+        classtype = #{record.classtype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.newspath != null">
+        newspath = #{record.newspath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filename != null">
+        filename = #{record.filename,jdbcType=BIT},
+      </if>
+      <if test="record.filetype != null">
+        filetype = #{record.filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.openpl != null">
+        openpl = #{record.openpl,jdbcType=BIT},
+      </if>
+      <if test="record.openadd != null">
+        openadd = #{record.openadd,jdbcType=BIT},
+      </if>
+      <if test="record.newline != null">
+        newline = #{record.newline,jdbcType=INTEGER},
+      </if>
+      <if test="record.hotline != null">
+        hotline = #{record.hotline,jdbcType=INTEGER},
+      </if>
+      <if test="record.goodline != null">
+        goodline = #{record.goodline,jdbcType=INTEGER},
+      </if>
+      <if test="record.classurl != null">
+        classurl = #{record.classurl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.groupid != null">
+        groupid = #{record.groupid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.myorder != null">
+        myorder = #{record.myorder,jdbcType=SMALLINT},
+      </if>
+      <if test="record.filenameQz != null">
+        filename_qz = #{record.filenameQz,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hotplline != null">
+        hotplline = #{record.hotplline,jdbcType=TINYINT},
+      </if>
+      <if test="record.modid != null">
+        modid = #{record.modid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.checked != null">
+        checked = #{record.checked,jdbcType=BIT},
+      </if>
+      <if test="record.firstline != null">
+        firstline = #{record.firstline,jdbcType=TINYINT},
+      </if>
+      <if test="record.bname != null">
+        bname = #{record.bname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.islist != null">
+        islist = #{record.islist,jdbcType=BIT},
+      </if>
+      <if test="record.searchtempid != null">
+        searchtempid = #{record.searchtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.tid != null">
+        tid = #{record.tid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.tbname != null">
+        tbname = #{record.tbname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.maxnum != null">
+        maxnum = #{record.maxnum,jdbcType=INTEGER},
+      </if>
+      <if test="record.checkpl != null">
+        checkpl = #{record.checkpl,jdbcType=BIT},
+      </if>
+      <if test="record.downNum != null">
+        down_num = #{record.downNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.onlineNum != null">
+        online_num = #{record.onlineNum,jdbcType=TINYINT},
+      </if>
+      <if test="record.listorder != null">
+        listorder = #{record.listorder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reorder != null">
+        reorder = #{record.reorder,jdbcType=VARCHAR},
+      </if>
+      <if test="record.classimg != null">
+        classimg = #{record.classimg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.jstempid != null">
+        jstempid = #{record.jstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.addinfofen != null">
+        addinfofen = #{record.addinfofen,jdbcType=INTEGER},
+      </if>
+      <if test="record.listdt != null">
+        listdt = #{record.listdt,jdbcType=BIT},
+      </if>
+      <if test="record.showclass != null">
+        showclass = #{record.showclass,jdbcType=BIT},
+      </if>
+      <if test="record.showdt != null">
+        showdt = #{record.showdt,jdbcType=BIT},
+      </if>
+      <if test="record.checkqadd != null">
+        checkqadd = #{record.checkqadd,jdbcType=BIT},
+      </if>
+      <if test="record.qaddlist != null">
+        qaddlist = #{record.qaddlist,jdbcType=BIT},
+      </if>
+      <if test="record.qaddshowkey != null">
+        qaddshowkey = #{record.qaddshowkey,jdbcType=BIT},
+      </if>
+      <if test="record.adminqinfo != null">
+        adminqinfo = #{record.adminqinfo,jdbcType=BIT},
+      </if>
+      <if test="record.doctime != null">
+        doctime = #{record.doctime,jdbcType=SMALLINT},
+      </if>
+      <if test="record.classpagekey != null">
+        classpagekey = #{record.classpagekey,jdbcType=VARCHAR},
+      </if>
+      <if test="record.dtlisttempid != null">
+        dtlisttempid = #{record.dtlisttempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.classtempid != null">
+        classtempid = #{record.classtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.nreclass != null">
+        nreclass = #{record.nreclass,jdbcType=BIT},
+      </if>
+      <if test="record.nreinfo != null">
+        nreinfo = #{record.nreinfo,jdbcType=BIT},
+      </if>
+      <if test="record.nrejs != null">
+        nrejs = #{record.nrejs,jdbcType=BIT},
+      </if>
+      <if test="record.nottobq != null">
+        nottobq = #{record.nottobq,jdbcType=BIT},
+      </if>
+      <if test="record.ipath != null">
+        ipath = #{record.ipath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.addreinfo != null">
+        addreinfo = #{record.addreinfo,jdbcType=BIT},
+      </if>
+      <if test="record.haddlist != null">
+        haddlist = #{record.haddlist,jdbcType=TINYINT},
+      </if>
+      <if test="record.sametitle != null">
+        sametitle = #{record.sametitle,jdbcType=BIT},
+      </if>
+      <if test="record.definfovoteid != null">
+        definfovoteid = #{record.definfovoteid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.wburl != null">
+        wburl = #{record.wburl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.qeditchecked != null">
+        qeditchecked = #{record.qeditchecked,jdbcType=BIT},
+      </if>
+      <if test="record.wapstyleid != null">
+        wapstyleid = #{record.wapstyleid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.repreinfo != null">
+        repreinfo = #{record.repreinfo,jdbcType=BIT},
+      </if>
+      <if test="record.pltempid != null">
+        pltempid = #{record.pltempid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.yhid != null">
+        yhid = #{record.yhid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.wfid != null">
+        wfid = #{record.wfid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.cgtoinfo != null">
+        cgtoinfo = #{record.cgtoinfo,jdbcType=BIT},
+      </if>
+      <if test="record.bdinfoid != null">
+        bdinfoid = #{record.bdinfoid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.repagenum != null">
+        repagenum = #{record.repagenum,jdbcType=SMALLINT},
+      </if>
+      <if test="record.keycid != null">
+        keycid = #{record.keycid,jdbcType=SMALLINT},
+      </if>
+      <if test="record.allinfos != null">
+        allinfos = #{record.allinfos,jdbcType=INTEGER},
+      </if>
+      <if test="record.infos != null">
+        infos = #{record.infos,jdbcType=INTEGER},
+      </if>
+      <if test="record.addtime != null">
+        addtime = #{record.addtime,jdbcType=INTEGER},
+      </if>
+      <if test="record.sonclass != null">
+        sonclass = #{record.sonclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.featherclass != null">
+        featherclass = #{record.featherclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.classpath != null">
+        classpath = #{record.classpath,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.intro != null">
+        intro = #{record.intro,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.qaddgroupid != null">
+        qaddgroupid = #{record.qaddgroupid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.cgroupid != null">
+        cgroupid = #{record.cgroupid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update phome_enewsclass
+    set classid = #{record.classid,jdbcType=SMALLINT},
+      bclassid = #{record.bclassid,jdbcType=SMALLINT},
+      classname = #{record.classname,jdbcType=VARCHAR},
+      is_zt = #{record.isZt,jdbcType=BIT},
+      lencord = #{record.lencord,jdbcType=SMALLINT},
+      link_num = #{record.linkNum,jdbcType=TINYINT},
+      newstempid = #{record.newstempid,jdbcType=SMALLINT},
+      onclick = #{record.onclick,jdbcType=INTEGER},
+      listtempid = #{record.listtempid,jdbcType=SMALLINT},
+      islast = #{record.islast,jdbcType=BIT},
+      classtype = #{record.classtype,jdbcType=VARCHAR},
+      newspath = #{record.newspath,jdbcType=VARCHAR},
+      filename = #{record.filename,jdbcType=BIT},
+      filetype = #{record.filetype,jdbcType=VARCHAR},
+      openpl = #{record.openpl,jdbcType=BIT},
+      openadd = #{record.openadd,jdbcType=BIT},
+      newline = #{record.newline,jdbcType=INTEGER},
+      hotline = #{record.hotline,jdbcType=INTEGER},
+      goodline = #{record.goodline,jdbcType=INTEGER},
+      classurl = #{record.classurl,jdbcType=VARCHAR},
+      groupid = #{record.groupid,jdbcType=SMALLINT},
+      myorder = #{record.myorder,jdbcType=SMALLINT},
+      filename_qz = #{record.filenameQz,jdbcType=VARCHAR},
+      hotplline = #{record.hotplline,jdbcType=TINYINT},
+      modid = #{record.modid,jdbcType=SMALLINT},
+      checked = #{record.checked,jdbcType=BIT},
+      firstline = #{record.firstline,jdbcType=TINYINT},
+      bname = #{record.bname,jdbcType=VARCHAR},
+      islist = #{record.islist,jdbcType=BIT},
+      searchtempid = #{record.searchtempid,jdbcType=SMALLINT},
+      tid = #{record.tid,jdbcType=SMALLINT},
+      tbname = #{record.tbname,jdbcType=VARCHAR},
+      maxnum = #{record.maxnum,jdbcType=INTEGER},
+      checkpl = #{record.checkpl,jdbcType=BIT},
+      down_num = #{record.downNum,jdbcType=TINYINT},
+      online_num = #{record.onlineNum,jdbcType=TINYINT},
+      listorder = #{record.listorder,jdbcType=VARCHAR},
+      reorder = #{record.reorder,jdbcType=VARCHAR},
+      classimg = #{record.classimg,jdbcType=VARCHAR},
+      jstempid = #{record.jstempid,jdbcType=SMALLINT},
+      addinfofen = #{record.addinfofen,jdbcType=INTEGER},
+      listdt = #{record.listdt,jdbcType=BIT},
+      showclass = #{record.showclass,jdbcType=BIT},
+      showdt = #{record.showdt,jdbcType=BIT},
+      checkqadd = #{record.checkqadd,jdbcType=BIT},
+      qaddlist = #{record.qaddlist,jdbcType=BIT},
+      qaddshowkey = #{record.qaddshowkey,jdbcType=BIT},
+      adminqinfo = #{record.adminqinfo,jdbcType=BIT},
+      doctime = #{record.doctime,jdbcType=SMALLINT},
+      classpagekey = #{record.classpagekey,jdbcType=VARCHAR},
+      dtlisttempid = #{record.dtlisttempid,jdbcType=SMALLINT},
+      classtempid = #{record.classtempid,jdbcType=SMALLINT},
+      nreclass = #{record.nreclass,jdbcType=BIT},
+      nreinfo = #{record.nreinfo,jdbcType=BIT},
+      nrejs = #{record.nrejs,jdbcType=BIT},
+      nottobq = #{record.nottobq,jdbcType=BIT},
+      ipath = #{record.ipath,jdbcType=VARCHAR},
+      addreinfo = #{record.addreinfo,jdbcType=BIT},
+      haddlist = #{record.haddlist,jdbcType=TINYINT},
+      sametitle = #{record.sametitle,jdbcType=BIT},
+      definfovoteid = #{record.definfovoteid,jdbcType=SMALLINT},
+      wburl = #{record.wburl,jdbcType=VARCHAR},
+      qeditchecked = #{record.qeditchecked,jdbcType=BIT},
+      wapstyleid = #{record.wapstyleid,jdbcType=SMALLINT},
+      repreinfo = #{record.repreinfo,jdbcType=BIT},
+      pltempid = #{record.pltempid,jdbcType=SMALLINT},
+      yhid = #{record.yhid,jdbcType=SMALLINT},
+      wfid = #{record.wfid,jdbcType=SMALLINT},
+      cgtoinfo = #{record.cgtoinfo,jdbcType=BIT},
+      bdinfoid = #{record.bdinfoid,jdbcType=VARCHAR},
+      repagenum = #{record.repagenum,jdbcType=SMALLINT},
+      keycid = #{record.keycid,jdbcType=SMALLINT},
+      allinfos = #{record.allinfos,jdbcType=INTEGER},
+      infos = #{record.infos,jdbcType=INTEGER},
+      addtime = #{record.addtime,jdbcType=INTEGER},
+      sonclass = #{record.sonclass,jdbcType=LONGVARCHAR},
+      featherclass = #{record.featherclass,jdbcType=LONGVARCHAR},
+      classpath = #{record.classpath,jdbcType=LONGVARCHAR},
+      intro = #{record.intro,jdbcType=LONGVARCHAR},
+      qaddgroupid = #{record.qaddgroupid,jdbcType=LONGVARCHAR},
+      cgroupid = #{record.cgroupid,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update phome_enewsclass
+    set classid = #{record.classid,jdbcType=SMALLINT},
+      bclassid = #{record.bclassid,jdbcType=SMALLINT},
+      classname = #{record.classname,jdbcType=VARCHAR},
+      is_zt = #{record.isZt,jdbcType=BIT},
+      lencord = #{record.lencord,jdbcType=SMALLINT},
+      link_num = #{record.linkNum,jdbcType=TINYINT},
+      newstempid = #{record.newstempid,jdbcType=SMALLINT},
+      onclick = #{record.onclick,jdbcType=INTEGER},
+      listtempid = #{record.listtempid,jdbcType=SMALLINT},
+      islast = #{record.islast,jdbcType=BIT},
+      classtype = #{record.classtype,jdbcType=VARCHAR},
+      newspath = #{record.newspath,jdbcType=VARCHAR},
+      filename = #{record.filename,jdbcType=BIT},
+      filetype = #{record.filetype,jdbcType=VARCHAR},
+      openpl = #{record.openpl,jdbcType=BIT},
+      openadd = #{record.openadd,jdbcType=BIT},
+      newline = #{record.newline,jdbcType=INTEGER},
+      hotline = #{record.hotline,jdbcType=INTEGER},
+      goodline = #{record.goodline,jdbcType=INTEGER},
+      classurl = #{record.classurl,jdbcType=VARCHAR},
+      groupid = #{record.groupid,jdbcType=SMALLINT},
+      myorder = #{record.myorder,jdbcType=SMALLINT},
+      filename_qz = #{record.filenameQz,jdbcType=VARCHAR},
+      hotplline = #{record.hotplline,jdbcType=TINYINT},
+      modid = #{record.modid,jdbcType=SMALLINT},
+      checked = #{record.checked,jdbcType=BIT},
+      firstline = #{record.firstline,jdbcType=TINYINT},
+      bname = #{record.bname,jdbcType=VARCHAR},
+      islist = #{record.islist,jdbcType=BIT},
+      searchtempid = #{record.searchtempid,jdbcType=SMALLINT},
+      tid = #{record.tid,jdbcType=SMALLINT},
+      tbname = #{record.tbname,jdbcType=VARCHAR},
+      maxnum = #{record.maxnum,jdbcType=INTEGER},
+      checkpl = #{record.checkpl,jdbcType=BIT},
+      down_num = #{record.downNum,jdbcType=TINYINT},
+      online_num = #{record.onlineNum,jdbcType=TINYINT},
+      listorder = #{record.listorder,jdbcType=VARCHAR},
+      reorder = #{record.reorder,jdbcType=VARCHAR},
+      classimg = #{record.classimg,jdbcType=VARCHAR},
+      jstempid = #{record.jstempid,jdbcType=SMALLINT},
+      addinfofen = #{record.addinfofen,jdbcType=INTEGER},
+      listdt = #{record.listdt,jdbcType=BIT},
+      showclass = #{record.showclass,jdbcType=BIT},
+      showdt = #{record.showdt,jdbcType=BIT},
+      checkqadd = #{record.checkqadd,jdbcType=BIT},
+      qaddlist = #{record.qaddlist,jdbcType=BIT},
+      qaddshowkey = #{record.qaddshowkey,jdbcType=BIT},
+      adminqinfo = #{record.adminqinfo,jdbcType=BIT},
+      doctime = #{record.doctime,jdbcType=SMALLINT},
+      classpagekey = #{record.classpagekey,jdbcType=VARCHAR},
+      dtlisttempid = #{record.dtlisttempid,jdbcType=SMALLINT},
+      classtempid = #{record.classtempid,jdbcType=SMALLINT},
+      nreclass = #{record.nreclass,jdbcType=BIT},
+      nreinfo = #{record.nreinfo,jdbcType=BIT},
+      nrejs = #{record.nrejs,jdbcType=BIT},
+      nottobq = #{record.nottobq,jdbcType=BIT},
+      ipath = #{record.ipath,jdbcType=VARCHAR},
+      addreinfo = #{record.addreinfo,jdbcType=BIT},
+      haddlist = #{record.haddlist,jdbcType=TINYINT},
+      sametitle = #{record.sametitle,jdbcType=BIT},
+      definfovoteid = #{record.definfovoteid,jdbcType=SMALLINT},
+      wburl = #{record.wburl,jdbcType=VARCHAR},
+      qeditchecked = #{record.qeditchecked,jdbcType=BIT},
+      wapstyleid = #{record.wapstyleid,jdbcType=SMALLINT},
+      repreinfo = #{record.repreinfo,jdbcType=BIT},
+      pltempid = #{record.pltempid,jdbcType=SMALLINT},
+      yhid = #{record.yhid,jdbcType=SMALLINT},
+      wfid = #{record.wfid,jdbcType=SMALLINT},
+      cgtoinfo = #{record.cgtoinfo,jdbcType=BIT},
+      bdinfoid = #{record.bdinfoid,jdbcType=VARCHAR},
+      repagenum = #{record.repagenum,jdbcType=SMALLINT},
+      keycid = #{record.keycid,jdbcType=SMALLINT},
+      allinfos = #{record.allinfos,jdbcType=INTEGER},
+      infos = #{record.infos,jdbcType=INTEGER},
+      addtime = #{record.addtime,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hz.business.pojo.NewsTypeWithBLOBs">
+    update phome_enewsclass
+    <set>
+      <if test="bclassid != null">
+        bclassid = #{bclassid,jdbcType=SMALLINT},
+      </if>
+      <if test="classname != null">
+        classname = #{classname,jdbcType=VARCHAR},
+      </if>
+      <if test="isZt != null">
+        is_zt = #{isZt,jdbcType=BIT},
+      </if>
+      <if test="lencord != null">
+        lencord = #{lencord,jdbcType=SMALLINT},
+      </if>
+      <if test="linkNum != null">
+        link_num = #{linkNum,jdbcType=TINYINT},
+      </if>
+      <if test="newstempid != null">
+        newstempid = #{newstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="onclick != null">
+        onclick = #{onclick,jdbcType=INTEGER},
+      </if>
+      <if test="listtempid != null">
+        listtempid = #{listtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="islast != null">
+        islast = #{islast,jdbcType=BIT},
+      </if>
+      <if test="classtype != null">
+        classtype = #{classtype,jdbcType=VARCHAR},
+      </if>
+      <if test="newspath != null">
+        newspath = #{newspath,jdbcType=VARCHAR},
+      </if>
+      <if test="filename != null">
+        filename = #{filename,jdbcType=BIT},
+      </if>
+      <if test="filetype != null">
+        filetype = #{filetype,jdbcType=VARCHAR},
+      </if>
+      <if test="openpl != null">
+        openpl = #{openpl,jdbcType=BIT},
+      </if>
+      <if test="openadd != null">
+        openadd = #{openadd,jdbcType=BIT},
+      </if>
+      <if test="newline != null">
+        newline = #{newline,jdbcType=INTEGER},
+      </if>
+      <if test="hotline != null">
+        hotline = #{hotline,jdbcType=INTEGER},
+      </if>
+      <if test="goodline != null">
+        goodline = #{goodline,jdbcType=INTEGER},
+      </if>
+      <if test="classurl != null">
+        classurl = #{classurl,jdbcType=VARCHAR},
+      </if>
+      <if test="groupid != null">
+        groupid = #{groupid,jdbcType=SMALLINT},
+      </if>
+      <if test="myorder != null">
+        myorder = #{myorder,jdbcType=SMALLINT},
+      </if>
+      <if test="filenameQz != null">
+        filename_qz = #{filenameQz,jdbcType=VARCHAR},
+      </if>
+      <if test="hotplline != null">
+        hotplline = #{hotplline,jdbcType=TINYINT},
+      </if>
+      <if test="modid != null">
+        modid = #{modid,jdbcType=SMALLINT},
+      </if>
+      <if test="checked != null">
+        checked = #{checked,jdbcType=BIT},
+      </if>
+      <if test="firstline != null">
+        firstline = #{firstline,jdbcType=TINYINT},
+      </if>
+      <if test="bname != null">
+        bname = #{bname,jdbcType=VARCHAR},
+      </if>
+      <if test="islist != null">
+        islist = #{islist,jdbcType=BIT},
+      </if>
+      <if test="searchtempid != null">
+        searchtempid = #{searchtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="tid != null">
+        tid = #{tid,jdbcType=SMALLINT},
+      </if>
+      <if test="tbname != null">
+        tbname = #{tbname,jdbcType=VARCHAR},
+      </if>
+      <if test="maxnum != null">
+        maxnum = #{maxnum,jdbcType=INTEGER},
+      </if>
+      <if test="checkpl != null">
+        checkpl = #{checkpl,jdbcType=BIT},
+      </if>
+      <if test="downNum != null">
+        down_num = #{downNum,jdbcType=TINYINT},
+      </if>
+      <if test="onlineNum != null">
+        online_num = #{onlineNum,jdbcType=TINYINT},
+      </if>
+      <if test="listorder != null">
+        listorder = #{listorder,jdbcType=VARCHAR},
+      </if>
+      <if test="reorder != null">
+        reorder = #{reorder,jdbcType=VARCHAR},
+      </if>
+      <if test="classimg != null">
+        classimg = #{classimg,jdbcType=VARCHAR},
+      </if>
+      <if test="jstempid != null">
+        jstempid = #{jstempid,jdbcType=SMALLINT},
+      </if>
+      <if test="addinfofen != null">
+        addinfofen = #{addinfofen,jdbcType=INTEGER},
+      </if>
+      <if test="listdt != null">
+        listdt = #{listdt,jdbcType=BIT},
+      </if>
+      <if test="showclass != null">
+        showclass = #{showclass,jdbcType=BIT},
+      </if>
+      <if test="showdt != null">
+        showdt = #{showdt,jdbcType=BIT},
+      </if>
+      <if test="checkqadd != null">
+        checkqadd = #{checkqadd,jdbcType=BIT},
+      </if>
+      <if test="qaddlist != null">
+        qaddlist = #{qaddlist,jdbcType=BIT},
+      </if>
+      <if test="qaddshowkey != null">
+        qaddshowkey = #{qaddshowkey,jdbcType=BIT},
+      </if>
+      <if test="adminqinfo != null">
+        adminqinfo = #{adminqinfo,jdbcType=BIT},
+      </if>
+      <if test="doctime != null">
+        doctime = #{doctime,jdbcType=SMALLINT},
+      </if>
+      <if test="classpagekey != null">
+        classpagekey = #{classpagekey,jdbcType=VARCHAR},
+      </if>
+      <if test="dtlisttempid != null">
+        dtlisttempid = #{dtlisttempid,jdbcType=SMALLINT},
+      </if>
+      <if test="classtempid != null">
+        classtempid = #{classtempid,jdbcType=SMALLINT},
+      </if>
+      <if test="nreclass != null">
+        nreclass = #{nreclass,jdbcType=BIT},
+      </if>
+      <if test="nreinfo != null">
+        nreinfo = #{nreinfo,jdbcType=BIT},
+      </if>
+      <if test="nrejs != null">
+        nrejs = #{nrejs,jdbcType=BIT},
+      </if>
+      <if test="nottobq != null">
+        nottobq = #{nottobq,jdbcType=BIT},
+      </if>
+      <if test="ipath != null">
+        ipath = #{ipath,jdbcType=VARCHAR},
+      </if>
+      <if test="addreinfo != null">
+        addreinfo = #{addreinfo,jdbcType=BIT},
+      </if>
+      <if test="haddlist != null">
+        haddlist = #{haddlist,jdbcType=TINYINT},
+      </if>
+      <if test="sametitle != null">
+        sametitle = #{sametitle,jdbcType=BIT},
+      </if>
+      <if test="definfovoteid != null">
+        definfovoteid = #{definfovoteid,jdbcType=SMALLINT},
+      </if>
+      <if test="wburl != null">
+        wburl = #{wburl,jdbcType=VARCHAR},
+      </if>
+      <if test="qeditchecked != null">
+        qeditchecked = #{qeditchecked,jdbcType=BIT},
+      </if>
+      <if test="wapstyleid != null">
+        wapstyleid = #{wapstyleid,jdbcType=SMALLINT},
+      </if>
+      <if test="repreinfo != null">
+        repreinfo = #{repreinfo,jdbcType=BIT},
+      </if>
+      <if test="pltempid != null">
+        pltempid = #{pltempid,jdbcType=SMALLINT},
+      </if>
+      <if test="yhid != null">
+        yhid = #{yhid,jdbcType=SMALLINT},
+      </if>
+      <if test="wfid != null">
+        wfid = #{wfid,jdbcType=SMALLINT},
+      </if>
+      <if test="cgtoinfo != null">
+        cgtoinfo = #{cgtoinfo,jdbcType=BIT},
+      </if>
+      <if test="bdinfoid != null">
+        bdinfoid = #{bdinfoid,jdbcType=VARCHAR},
+      </if>
+      <if test="repagenum != null">
+        repagenum = #{repagenum,jdbcType=SMALLINT},
+      </if>
+      <if test="keycid != null">
+        keycid = #{keycid,jdbcType=SMALLINT},
+      </if>
+      <if test="allinfos != null">
+        allinfos = #{allinfos,jdbcType=INTEGER},
+      </if>
+      <if test="infos != null">
+        infos = #{infos,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null">
+        addtime = #{addtime,jdbcType=INTEGER},
+      </if>
+      <if test="sonclass != null">
+        sonclass = #{sonclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="featherclass != null">
+        featherclass = #{featherclass,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="classpath != null">
+        classpath = #{classpath,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="intro != null">
+        intro = #{intro,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="qaddgroupid != null">
+        qaddgroupid = #{qaddgroupid,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="cgroupid != null">
+        cgroupid = #{cgroupid,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where classid = #{classid,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.hz.business.pojo.NewsTypeWithBLOBs">
+    update phome_enewsclass
+    set bclassid = #{bclassid,jdbcType=SMALLINT},
+      classname = #{classname,jdbcType=VARCHAR},
+      is_zt = #{isZt,jdbcType=BIT},
+      lencord = #{lencord,jdbcType=SMALLINT},
+      link_num = #{linkNum,jdbcType=TINYINT},
+      newstempid = #{newstempid,jdbcType=SMALLINT},
+      onclick = #{onclick,jdbcType=INTEGER},
+      listtempid = #{listtempid,jdbcType=SMALLINT},
+      islast = #{islast,jdbcType=BIT},
+      classtype = #{classtype,jdbcType=VARCHAR},
+      newspath = #{newspath,jdbcType=VARCHAR},
+      filename = #{filename,jdbcType=BIT},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      openpl = #{openpl,jdbcType=BIT},
+      openadd = #{openadd,jdbcType=BIT},
+      newline = #{newline,jdbcType=INTEGER},
+      hotline = #{hotline,jdbcType=INTEGER},
+      goodline = #{goodline,jdbcType=INTEGER},
+      classurl = #{classurl,jdbcType=VARCHAR},
+      groupid = #{groupid,jdbcType=SMALLINT},
+      myorder = #{myorder,jdbcType=SMALLINT},
+      filename_qz = #{filenameQz,jdbcType=VARCHAR},
+      hotplline = #{hotplline,jdbcType=TINYINT},
+      modid = #{modid,jdbcType=SMALLINT},
+      checked = #{checked,jdbcType=BIT},
+      firstline = #{firstline,jdbcType=TINYINT},
+      bname = #{bname,jdbcType=VARCHAR},
+      islist = #{islist,jdbcType=BIT},
+      searchtempid = #{searchtempid,jdbcType=SMALLINT},
+      tid = #{tid,jdbcType=SMALLINT},
+      tbname = #{tbname,jdbcType=VARCHAR},
+      maxnum = #{maxnum,jdbcType=INTEGER},
+      checkpl = #{checkpl,jdbcType=BIT},
+      down_num = #{downNum,jdbcType=TINYINT},
+      online_num = #{onlineNum,jdbcType=TINYINT},
+      listorder = #{listorder,jdbcType=VARCHAR},
+      reorder = #{reorder,jdbcType=VARCHAR},
+      classimg = #{classimg,jdbcType=VARCHAR},
+      jstempid = #{jstempid,jdbcType=SMALLINT},
+      addinfofen = #{addinfofen,jdbcType=INTEGER},
+      listdt = #{listdt,jdbcType=BIT},
+      showclass = #{showclass,jdbcType=BIT},
+      showdt = #{showdt,jdbcType=BIT},
+      checkqadd = #{checkqadd,jdbcType=BIT},
+      qaddlist = #{qaddlist,jdbcType=BIT},
+      qaddshowkey = #{qaddshowkey,jdbcType=BIT},
+      adminqinfo = #{adminqinfo,jdbcType=BIT},
+      doctime = #{doctime,jdbcType=SMALLINT},
+      classpagekey = #{classpagekey,jdbcType=VARCHAR},
+      dtlisttempid = #{dtlisttempid,jdbcType=SMALLINT},
+      classtempid = #{classtempid,jdbcType=SMALLINT},
+      nreclass = #{nreclass,jdbcType=BIT},
+      nreinfo = #{nreinfo,jdbcType=BIT},
+      nrejs = #{nrejs,jdbcType=BIT},
+      nottobq = #{nottobq,jdbcType=BIT},
+      ipath = #{ipath,jdbcType=VARCHAR},
+      addreinfo = #{addreinfo,jdbcType=BIT},
+      haddlist = #{haddlist,jdbcType=TINYINT},
+      sametitle = #{sametitle,jdbcType=BIT},
+      definfovoteid = #{definfovoteid,jdbcType=SMALLINT},
+      wburl = #{wburl,jdbcType=VARCHAR},
+      qeditchecked = #{qeditchecked,jdbcType=BIT},
+      wapstyleid = #{wapstyleid,jdbcType=SMALLINT},
+      repreinfo = #{repreinfo,jdbcType=BIT},
+      pltempid = #{pltempid,jdbcType=SMALLINT},
+      yhid = #{yhid,jdbcType=SMALLINT},
+      wfid = #{wfid,jdbcType=SMALLINT},
+      cgtoinfo = #{cgtoinfo,jdbcType=BIT},
+      bdinfoid = #{bdinfoid,jdbcType=VARCHAR},
+      repagenum = #{repagenum,jdbcType=SMALLINT},
+      keycid = #{keycid,jdbcType=SMALLINT},
+      allinfos = #{allinfos,jdbcType=INTEGER},
+      infos = #{infos,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER},
+      sonclass = #{sonclass,jdbcType=LONGVARCHAR},
+      featherclass = #{featherclass,jdbcType=LONGVARCHAR},
+      classpath = #{classpath,jdbcType=LONGVARCHAR},
+      intro = #{intro,jdbcType=LONGVARCHAR},
+      qaddgroupid = #{qaddgroupid,jdbcType=LONGVARCHAR},
+      cgroupid = #{cgroupid,jdbcType=LONGVARCHAR}
+    where classid = #{classid,jdbcType=SMALLINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hz.business.pojo.NewsType">
+    update phome_enewsclass
+    set bclassid = #{bclassid,jdbcType=SMALLINT},
+      classname = #{classname,jdbcType=VARCHAR},
+      is_zt = #{isZt,jdbcType=BIT},
+      lencord = #{lencord,jdbcType=SMALLINT},
+      link_num = #{linkNum,jdbcType=TINYINT},
+      newstempid = #{newstempid,jdbcType=SMALLINT},
+      onclick = #{onclick,jdbcType=INTEGER},
+      listtempid = #{listtempid,jdbcType=SMALLINT},
+      islast = #{islast,jdbcType=BIT},
+      classtype = #{classtype,jdbcType=VARCHAR},
+      newspath = #{newspath,jdbcType=VARCHAR},
+      filename = #{filename,jdbcType=BIT},
+      filetype = #{filetype,jdbcType=VARCHAR},
+      openpl = #{openpl,jdbcType=BIT},
+      openadd = #{openadd,jdbcType=BIT},
+      newline = #{newline,jdbcType=INTEGER},
+      hotline = #{hotline,jdbcType=INTEGER},
+      goodline = #{goodline,jdbcType=INTEGER},
+      classurl = #{classurl,jdbcType=VARCHAR},
+      groupid = #{groupid,jdbcType=SMALLINT},
+      myorder = #{myorder,jdbcType=SMALLINT},
+      filename_qz = #{filenameQz,jdbcType=VARCHAR},
+      hotplline = #{hotplline,jdbcType=TINYINT},
+      modid = #{modid,jdbcType=SMALLINT},
+      checked = #{checked,jdbcType=BIT},
+      firstline = #{firstline,jdbcType=TINYINT},
+      bname = #{bname,jdbcType=VARCHAR},
+      islist = #{islist,jdbcType=BIT},
+      searchtempid = #{searchtempid,jdbcType=SMALLINT},
+      tid = #{tid,jdbcType=SMALLINT},
+      tbname = #{tbname,jdbcType=VARCHAR},
+      maxnum = #{maxnum,jdbcType=INTEGER},
+      checkpl = #{checkpl,jdbcType=BIT},
+      down_num = #{downNum,jdbcType=TINYINT},
+      online_num = #{onlineNum,jdbcType=TINYINT},
+      listorder = #{listorder,jdbcType=VARCHAR},
+      reorder = #{reorder,jdbcType=VARCHAR},
+      classimg = #{classimg,jdbcType=VARCHAR},
+      jstempid = #{jstempid,jdbcType=SMALLINT},
+      addinfofen = #{addinfofen,jdbcType=INTEGER},
+      listdt = #{listdt,jdbcType=BIT},
+      showclass = #{showclass,jdbcType=BIT},
+      showdt = #{showdt,jdbcType=BIT},
+      checkqadd = #{checkqadd,jdbcType=BIT},
+      qaddlist = #{qaddlist,jdbcType=BIT},
+      qaddshowkey = #{qaddshowkey,jdbcType=BIT},
+      adminqinfo = #{adminqinfo,jdbcType=BIT},
+      doctime = #{doctime,jdbcType=SMALLINT},
+      classpagekey = #{classpagekey,jdbcType=VARCHAR},
+      dtlisttempid = #{dtlisttempid,jdbcType=SMALLINT},
+      classtempid = #{classtempid,jdbcType=SMALLINT},
+      nreclass = #{nreclass,jdbcType=BIT},
+      nreinfo = #{nreinfo,jdbcType=BIT},
+      nrejs = #{nrejs,jdbcType=BIT},
+      nottobq = #{nottobq,jdbcType=BIT},
+      ipath = #{ipath,jdbcType=VARCHAR},
+      addreinfo = #{addreinfo,jdbcType=BIT},
+      haddlist = #{haddlist,jdbcType=TINYINT},
+      sametitle = #{sametitle,jdbcType=BIT},
+      definfovoteid = #{definfovoteid,jdbcType=SMALLINT},
+      wburl = #{wburl,jdbcType=VARCHAR},
+      qeditchecked = #{qeditchecked,jdbcType=BIT},
+      wapstyleid = #{wapstyleid,jdbcType=SMALLINT},
+      repreinfo = #{repreinfo,jdbcType=BIT},
+      pltempid = #{pltempid,jdbcType=SMALLINT},
+      yhid = #{yhid,jdbcType=SMALLINT},
+      wfid = #{wfid,jdbcType=SMALLINT},
+      cgtoinfo = #{cgtoinfo,jdbcType=BIT},
+      bdinfoid = #{bdinfoid,jdbcType=VARCHAR},
+      repagenum = #{repagenum,jdbcType=SMALLINT},
+      keycid = #{keycid,jdbcType=SMALLINT},
+      allinfos = #{allinfos,jdbcType=INTEGER},
+      infos = #{infos,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=INTEGER}
+    where classid = #{classid,jdbcType=SMALLINT}
+  </update>
+</mapper>
