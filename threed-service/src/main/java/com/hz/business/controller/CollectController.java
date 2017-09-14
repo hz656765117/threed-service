@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hz.base.util.JsonResult;
+
+
 @RestController
 @RequestMapping("collect")
 public class CollectController {
@@ -23,6 +26,9 @@ public class CollectController {
     @RequestMapping(value = "/add",method= RequestMethod.GET)
     public String setupForm(@RequestParam("userId") String userId, ModelMap model) {
     	System.out.println(userId);
+    	JsonResult result = new JsonResult();
+    	result.setSuccess(true);
+    	
         return "userId is :" + userId;
     }
 }
