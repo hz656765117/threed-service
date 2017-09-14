@@ -1,4 +1,5 @@
 package com.hz.business;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.*;
 import org.springframework.boot.autoconfigure.*;
 import org.springframework.context.annotation.Bean;
@@ -8,6 +9,10 @@ import org.springframework.stereotype.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
+import com.aliyun.oss.OSSClient;
+import com.hz.base.oss.OSSStorageService;
+import com.hz.base.oss.ServerStorageService;
+import com.hz.base.oss.StorageService;
 import com.hz.business.websocket.MyHandler;
 
 @SpringBootApplication
@@ -49,6 +54,26 @@ public class Example {
 //        return new DefaultHandshakeHandler(
 //                new JettyRequestUpgradeStrategy(new WebSocketServerFactory(policy)));
 //    }
+	
+	
+    @Bean(destroyMethod = "shutdown")
+    public OSSClient ossClient(@Value("${oss.end-point}") String endPoint,
+                               @Value("${oss.access-key-id}") String accessKeyId,
+                               @Value("${oss.access-key-secret}") String accessKeySecret) {
+    	System.out.println(endPoint);
+        return new OSSClient(endPoint, accessKeyId, accessKeySecret);
+    }
+
+    @Bean
+    public StorageService storageService(@Value("${oss.bucket}") String bucketName,
+                                         @Value("${cs.ftp-path}") String ftpPath,
+                                         @Value("${cs.project-type}") String projectType) {
+        if("SAAS".equalsIgnoreCase(projectType)){
+            return new OSSStorageService(bucketName);
+        }
+        return new ServerStorageService(ftpPath);
+    }
+
     
     
 
