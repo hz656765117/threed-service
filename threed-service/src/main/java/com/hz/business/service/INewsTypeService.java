@@ -14,5 +14,11 @@ public interface INewsTypeService {
 	public JsonResult listModelTypeByPid(String pTypeId);
 	
 	
+	/**
+	 * 根据分类id查询其所有文件
+	 * @param classId
+	 * @return
+	 */
+	public JsonResult listFilesByClassId(String classId);
 	
 }

@@ -30,4 +30,13 @@ public class NewsTypeController extends BaseController {
 		JsonResult result = newsTypeService.listModelTypeByPid(pid);
         return result;
     }
+	
+	@RequestMapping("listFilesByClassId")
+    public JsonResult  listFilesByClassId(ModelMap model, HttpServletRequest request,String classid,String username) {
+		JsonResult result = newsTypeService.listFilesByClassId(classid);
+        return result;
+    }
+	
+	
+	
 }
