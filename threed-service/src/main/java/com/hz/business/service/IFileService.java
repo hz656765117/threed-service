@@ -15,5 +15,8 @@ public interface IFileService {
 	public JsonResult downloadFile(String username, String path);
 	
 	
+	public JsonResult downloadFileById(String username, String id,String type);
+	
+	
 	
 }

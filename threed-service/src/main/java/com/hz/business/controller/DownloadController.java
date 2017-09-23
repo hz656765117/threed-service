@@ -27,9 +27,9 @@ import com.hz.business.service.IUserService;
 @RequestMapping("download")
 public class DownloadController extends BaseController{
     private final static Logger logger = LoggerFactory.getLogger(DownloadController.class);
-
+    private String sepa = java.io.File.separator;
     	
-    private static String prePath = "G:\\files" ;
+    private static String prePath = "/home/pkg/files/" ;
 	
  
 	@Autowired
@@ -47,21 +47,36 @@ public class DownloadController extends BaseController{
 	 * @param password
 	 * @return
 	 */
-	@RequestMapping("getFile")
-    public JsonResult  getFile(ModelMap model, HttpServletRequest request,String username,String path,String type) {
+	@RequestMapping("getFile1")
+    public JsonResult  getFile1(ModelMap model, HttpServletRequest request,String username,String path,String type) {
 		JsonResult result = null;
 		if (StringUtils.isNotBlank(type)) {
 			if (type.equalsIgnoreCase("image")) {
-				result = fileService.downloadFile("book/omega maz.jpg", prePath + "\\omega maz.jpg");
+				result = fileService.downloadFile("book/omega maz.jpg",  prePath +  "omega maz.jpg");
 			}else if (type.equalsIgnoreCase("max")) {
-				result = fileService.downloadFile("book/book.max", prePath + "\\book.max");
+				result = fileService.downloadFile("book/book.max", prePath + "book.max");
 			}else {
-				result = fileService.downloadFile("book/book.png", prePath + "\\book.png");
+				result = fileService.downloadFile("book/book.png", prePath + "book.png");
 			}
-			
 		}else {
-			result = fileService.downloadFile("2017080801/功能清单.xlsx", prePath + "\\222.xlsx");
+			result = fileService.downloadFile("2017080801/功能清单.xlsx", prePath + "222.xlsx");
 		}
+        return result;
+    }
+	
+	
+	/**
+	 * 
+	 * @param model
+	 * @param request
+	 * @param username
+	 * @param password
+	 * @return
+	 */
+	@RequestMapping("getFile")
+    public JsonResult  getFile(ModelMap model, HttpServletRequest request,String username,String id,String type) {
+		JsonResult result = null;
+		result = fileService.downloadFileById(username, id, type);
         return result;
     }
 }
